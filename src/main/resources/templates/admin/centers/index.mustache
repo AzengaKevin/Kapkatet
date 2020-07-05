@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>partials/header}}
+
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+    <!-- Sidebar -->
+    {{> admin/includes/sidebar }}
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            {{> admin/includes/topbar }}
+            <!-- End of Topbar -->
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <h1 class="h3 mb-2 text-gray-800">Kapkatet Tea Factory Centers</h1>
+                <p class="mb-4">All the tea collections centers available in Kapkatet</p>
+
+                {{#CENTERS_ADDED}}
+
+                <!-- DataTales Example -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Collection Centers</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Location</th>
+                                    <th>Sub Location</th>
+                                    <th>Actions</th>
+                                </tr>
+                                </thead>
+                                <tfoot>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Location</th>
+                                    <th>Sub Location</th>
+                                    <th>Actions</th>
+                                </tr>
+                                </tfoot>
+                                <tbody>
+
+                                {{#centers}}
+                                <tr>
+                                    <td>{{ id }}</td>
+                                    <td>{{ name }}</td>
+                                    <td>{{ location }}</td>
+                                    <td>{{ subLocation }}</td>
+                                    <td class="d-flex justify-content-around">
+                                        <a href="/admin/centers/{{ id }}/edit" class="btn btn-sm btn-primary">
+                                            <i class="fa fa-edit"> </i>
+                                        </a>
+                                        <a role="button" href="#" data-toggle="modal"
+                                           data-target="#delete-center-{{id}}" class="btn btn-sm btn-danger">
+                                            <i class="fa fa-trash-alt"> </i>
+                                        </a>
+
+                                        {{> /admin/includes/modals/delete-center-confirmation }}
+
+                                    </td>
+                                </tr>
+                                {{/centers}}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                {{/CENTERS_ADDED}}
+
+                {{^CENTERS_ADDED}}
+                <div class="font-weight-bold">No Centers Added Yet</div>
+                {{/CENTERS_ADDED}}
+
+            </div>
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Your Website 2020</span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+
+{{>partials/footer}}
+
+</body>
+</html>

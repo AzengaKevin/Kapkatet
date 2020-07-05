@@ -1,0 +1,75 @@
+<nav class="navbar navbar-expand-lg navbar-light topbar bg-white static-top shadow">
+
+    <!-- Brand -->
+    <a class="navbar-brand" href="/">
+        <img src="/img/logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy" />
+        {{ title }}
+    </a>
+
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="global-nav" aria-controls="global-nav" aria-expanded="false" aria-label="Toggle Navigation">
+        <i class="fa fa-bars"></i>
+    </button>
+
+    <!-- Top Navigation -->
+    <div class="collapse navbar-collapse" id="global-nav">
+        <!-- Left Section -->
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+        </ul>
+        <!-- Right Section -->
+        <ul class="navbar-nav ml-auto">
+
+            {{#LOGGED_IN}}
+
+            <!-- Nav Item - User Information -->
+            <li class="nav-item dropdown no-arrow">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                   aria-expanded="false">
+                    <span class="mr-2 d-none d-md-inline text-gray-600 small">{{ user.username }}</span>
+                    <i class="fas fa-user fa-fw"></i>
+                </a>
+                <!-- Dropdown - User Information -->
+                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+
+                    {{#admin}}
+                    <a class="dropdown-item" href="/admin/dashboard">
+                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                        Admin Dashboard
+                    </a>
+                    {{/admin}}
+
+                    {{#clerk}}
+                    <a class="dropdown-item" href="/clerk/dashboard">
+                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                        Clerk Dashboard
+                    </a>
+                    {{/clerk}}
+
+                    {{#default}}
+                    <a class="dropdown-item" href="/dashboard">
+                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                        Dashboard
+                    </a>
+                    {{/default}}
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                        Logout
+                    </a>
+                </div>
+            </li>
+            {{/LOGGED_IN}}
+
+            {{^LOGGED_IN}}
+            <li class="nav-item"><a href="/login" class="btn btn-outline-primary btn-sm">Login</a></li>
+            <li class="nav-item ml-3"><a href="/register" class="btn btn-primary btn-sm">Register</a></li>
+            {{/LOGGED_IN}}
+
+        </ul>
+
+    </div>
+
+</nav>

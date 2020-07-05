@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>partials/header}}
+
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <!-- Sidebar - Brand -->
+        <li>
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <img class="rounded-circle" width="48" height="48" src="/img/logo.jpg" alt="Kapkatet Logo"/>
+                </div>
+                <div style="text-overflow: ellipsis; white-space: nowrap, overflow: hidden;"
+                     class="text-white sidebar-brand-text mx-3">{{ title }}
+                </div>
+            </a>
+        </li>
+
+        <!-- Divider -->
+        <li>
+            <hr class="sidebar-divider my-0"/>
+        </li>
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item active">
+            <a class="nav-link" href="/admin/dashboard">
+                <i class="fas fa-fw fa-tachometer-alt"> </i>
+                <span>Dashboard</span></a>
+        </li>
+
+        <!-- Divider -->
+        <li>
+            <hr class="sidebar-divider"/>
+        </li>
+
+        <!-- Heading -->
+        <li>
+            <div class="sidebar-heading">Resources Management</div>
+        </li>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse-users"
+               aria-controls="collapse-users">
+                <i class="fas fa-fw fa-users"> </i>
+                <span>Records</span>
+            </a>
+            <div id="collapse-users" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Your Records</h6>
+                    <a class="collapse-item" href="#">Browse Records</a>
+                    <a class="collapse-item" href="#">Take Records</a>
+                </div>
+            </div>
+        </li>
+        <!-- Divider -->
+        <li>
+            <hr class="sidebar-divider"/>
+        </li>
+
+        <!-- Heading -->
+        <li>
+            <div class="sidebar-heading">Utility Management</div>
+        </li>
+
+        <!-- Nav Item - Charts -->
+        <li class="nav-item"><a class="nav-link" href="#"><i
+                class="fas fa-fw fa-directions"> </i><span>Your Centers</span></a></li>
+    </ul>
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <!-- Sidebar Toggle (Topbar) -->
+                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                    <i class="fa fa-bars"> </i>
+                </button>
+
+                <!-- Topbar Search -->
+                <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <div class="input-group">
+                        <input class="form-control bg-light border-0 small" placeholder="Search for..."
+                               aria-label="Search" aria-describedby="basic-addon2"/>
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button">
+                                <i class="fas fa-search fa-sm"> </i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Topbar Navbar -->
+                <ul class="navbar-nav ml-auto">
+
+                    <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                    <li class="nav-item dropdown no-arrow d-sm-none">
+                        <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                           data-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-search fa-fw"> </i>
+                        </a>
+                        <!-- Dropdown - Messages -->
+                        <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                             aria-labelledby="searchDropdown">
+                            <form class="form-inline mr-auto w-100 navbar-search">
+                                <div class="input-group">
+                                    <input class="form-control bg-light border-0 small"
+                                           placeholder="Search for..."
+                                           aria-label="Search" aria-describedby="basic-addon2"/>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="button">
+                                            <i class="fas fa-search fa-sm"> </i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </li>
+
+                    <!-- Nav Item - Alerts -->
+                    <li class="nav-item dropdown no-arrow mx-1">
+                        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                           data-toggle="dropdown"
+                           aria-expanded="false">
+                            <i class="fas fa-bell fa-fw"> </i>
+                            <!-- Counter - Alerts -->
+                            <span class="badge badge-danger badge-counter">3+</span>
+                        </a>
+                        <!-- Dropdown - Alerts -->
+                        <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                             aria-labelledby="alertsDropdown">
+                            <h6 class="dropdown-header">
+                                Alerts Center
+                            </h6>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <div class="mr-3">
+                                    <div class="icon-circle bg-primary">
+                                        <i class="fas fa-file-alt text-white"> </i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="small text-gray-500">December 12, 2019</div>
+                                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                                </div>
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <div class="mr-3">
+                                    <div class="icon-circle bg-success">
+                                        <i class="fas fa-donate text-white"> </i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="small text-gray-500">December 7, 2019</div>
+                                    $290.29 has been deposited into your account!
+                                </div>
+                            </a>
+                            <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="topbar-divider d-none d-sm-block"></div>
+                    </li>
+
+                    <!-- Nav Item - User Information -->
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                           data-toggle="dropdown" aria-expanded="false">
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ user.username }}</span>
+                            <img class="img-profile rounded-circle"
+                                 src="https://source.unsplash.com/QAB-WJcbgJk/60x60"/>
+                        </a>
+                        <!-- Dropdown - User Information -->
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                             aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"> </i>
+                                Profile
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-cog fa-sm fa-fw mr-2 text-gray-400"> </i>
+                                Settings
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"> </i>
+                                Logout
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </nav>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                </div>
+
+                <!-- Content Row -->
+                <div class="row">
+
+                    <!-- Total Tea Weight (Monthly)-->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Total Tea Weight (Monthly)
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">40,000 KGS</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-calendar fa-2x text-gray-300"> </i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Total Tea Weight (Annually)-->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-success shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                            Total Tea Weight (Annual)
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">360,000 KGS</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-dollar-sign fa-2x text-gray-300"> </i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Total Farmers -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-info shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total
+                                            Farmers
+                                        </div>
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col-auto">
+                                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="progress progress-sm mr-2">
+                                                    <div class="progress-bar bg-info" role="progressbar"
+                                                         style="width: 50%" aria-valuenow="50"
+                                                         aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-users fa-2x text-gray-300"> </i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Buying Center -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-warning shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1"> Buying
+                                            Centers
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">32</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-list fa-2x text-gray-300"> </i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Content Row -->
+                <div class="row">
+
+                    <!-- Content Column -->
+                    <div class="col-lg-6 mb-4">
+
+                        <!-- Project Card Example -->
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="small font-weight-bold">Migrating Farmer Records to new Servers<span
+                                        class="float-right">30%</span>
+                                </h4>
+                                <div class="progress mb-4">
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 30%"
+                                         aria-valuenow="20"
+                                         aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <h4 class="small font-weight-bold">Going Digital<span class="float-right">40%</span>
+                                </h4>
+                                <div class="progress mb-4">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 40%"
+                                         aria-valuenow="40"
+                                         aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <h4 class="small font-weight-bold">Reshuffling Clerks <span
+                                        class="float-right">60%</span></h4>
+                                <div class="progress mb-4">
+                                    <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60"
+                                         aria-valuemin="0"
+                                         aria-valuemax="100"></div>
+                                </div>
+                                <h4 class="small font-weight-bold">Handing Multiple Accounts <span
+                                        class="float-right">Complete!</span></h4>
+                                <div class="progress">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%"
+                                         aria-valuenow="100"
+                                         aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Your Website 2020</span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+
+{{>partials/footer}}
+
+</body>
+</html>
