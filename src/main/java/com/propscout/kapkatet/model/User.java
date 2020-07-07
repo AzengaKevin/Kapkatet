@@ -144,6 +144,11 @@ public class User {
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 ", password='" + password + '\'' +
+                ", expired=" + expired +
+                ", locked=" + locked +
+                ", enabled=" + enabled +
+                ", passwordConfirmation='" + passwordConfirmation + '\'' +
+                ", roles=" + roles +
                 '}';
     }
 }

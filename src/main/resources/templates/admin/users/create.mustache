@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>partials/header}}
+
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+    <!-- Sidebar -->
+    {{> admin/includes/sidebar }}
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            {{> admin/includes/topbar }}
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-center mb-4">
+                    <h1 class="h3 mb-0 text-gray-800 text-center">Create User</h1>
+                </div>
+
+
+                <!-- Content Row -->
+                <div class="row justify-content-center">
+
+                    <!-- Content Column -->
+                    <div class="col-lg-8 mb-4">
+
+                        <form action="/admin/users" method="post">
+
+                            <input type="hidden" name="_csrf" value="{{ _csrf }}"/>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input name="name" id="name" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input name="username" id="username" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" name="email" id="email" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input name="phone" id="phone" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" name="password" id="password" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input name="expired" type="checkbox" class="form-check-input"
+                                           id="expiredCheckbox"/>
+                                    <label class="form-check-label" for="expiredCheckbox">Account Expired</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input name="locked" type="checkbox" class="form-check-input" id="lockedCheckbox"/>
+                                    <label class="form-check-label" for="lockedCheckbox">Account Locked</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input name="enabled" type="checkbox" class="form-check-input"
+                                           id="enabledCheckbox"/>
+                                    <label class="form-check-label" for="enabledCheckbox">Account Enabled</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="role">Choose Role</label>
+                                <select class="form-control" name="role_id" id="role">
+                                    {{#roles}}
+                                    <option value="{{ id }}">{{ name }}</option>
+                                    {{/roles}}
+                                </select>
+                            </div>
+
+                            <div class="clearfix mb-3">
+                                <button class="btn btn-primary float-right">Add User</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Your Website 2020</span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+
+{{>partials/footer}}
+
+</body>
+</html>

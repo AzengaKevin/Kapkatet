@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-public class UserController {
+public class AuthController {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 

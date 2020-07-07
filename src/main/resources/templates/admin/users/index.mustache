@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>partials/header}}
+
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+    <!-- Sidebar -->
+    {{> admin/includes/sidebar }}
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            {{> admin/includes/topbar }}
+            <!-- End of Topbar -->
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <h1 class="h3 mb-2 text-gray-800">Kapkatet Tea Factory Users</h1>
+                <p class="mb-4">All the users registered with Kapkatet system</p>
+
+                {{#USERS_REGISTERED}}
+
+                <!-- DataTales Example -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Katpkatet Users</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Username</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                    <th>Expired</th>
+                                    <th>Locked</th>
+                                    <th>Enabled</th>
+                                    <th>Actions</th>
+                                </tr>
+                                </thead>
+                                <tfoot>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Username</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                    <th>Expired</th>
+                                    <th>Locked</th>
+                                    <th>Enabled</th>
+                                    <th>Actions</th>
+                                </tr>
+                                </tfoot>
+                                <tbody>
+
+                                {{#users}}
+                                <tr>
+                                    <td>{{ id }}</td>
+                                    <td>{{ name }}</td>
+                                    <td>{{ username }}</td>
+                                    <td>{{ phone }}</td>
+                                    <td>{{ email }}</td>
+                                    <td>
+                                        {{#expired}}Expired{{/expired}}
+                                        {{^expired}}Not Expired{{/expired}}
+                                    </td>
+                                    <td>
+                                        {{#locked}}Locked{{/locked}}
+                                        {{^locked}}Not Locked{{/locked}}
+                                    </td>
+                                    <td>
+                                        {{#enabled}}Enabled{{/enabled}}
+                                        {{^enabled}}Not Enabled{{/enabled}}
+                                    </td>
+                                    <td class="d-flex justify-content-around">
+                                        <a href="/admin/users/{{ id }}/edit" class="btn btn-sm btn-primary">
+                                            <i class="fa fa-edit"> </i>
+                                        </a>
+                                        <a role="button" href="#" data-toggle="modal"
+                                           data-target="#delete-user-{{id}}" class="btn btn-sm btn-danger">
+                                            <i class="fa fa-trash-alt"> </i>
+                                        </a>
+
+                                    </td>
+                                </tr>
+                                {{/users}}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                {{/USERS_REGISTERED}}
+
+                {{^USERS_REGISTERED}}
+                <div class="font-weight-bold">No User registered Yet</div>
+                {{/USERS_REGISTERED}}
+
+            </div>
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Your Website 2020</span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+
+{{>partials/footer}}
+
+</body>
+</html>
