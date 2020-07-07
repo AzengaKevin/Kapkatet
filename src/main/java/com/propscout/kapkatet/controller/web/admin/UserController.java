@@ -118,6 +118,24 @@ public class UserController {
         }
     }
 
+    @PostMapping(value = {"/admin/users/{userId}"})
+    public String deleteUser(@PathVariable long userId) {
+
+        System.out.println("User Id: " + userId);
+
+        try {
+
+            userService.deleteUserBiId(userId);
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+        }
+
+        return "redirect:/admin/users";
+    }
+
 
     /**
      * Add cross site request forgery token to the calling route

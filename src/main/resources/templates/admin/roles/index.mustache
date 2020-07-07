@@ -22,15 +22,15 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Kapkatet Tea Factory Users</h1>
-                <p class="mb-4">All the users registered with Kapkatet system</p>
+                <h1 class="h3 mb-2 text-gray-800">Kapkatet Tea Factory User Roles</h1>
+                <p class="mb-4">All the users of the system are divided in the following roles</p>
 
-                {{#USERS_REGISTERED}}
+                {{#ROLES_AVAILABLE}}
 
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Katpkatet Users</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Users roles</h6>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -39,12 +39,6 @@
                                 <tr>
                                     <th>Id</th>
                                     <th>Name</th>
-                                    <th>Username</th>
-                                    <th>Phone</th>
-                                    <th>Email</th>
-                                    <th>Expired</th>
-                                    <th>Locked</th>
-                                    <th>Enabled</th>
                                     <th>Actions</th>
                                 </tr>
                                 </thead>
@@ -52,61 +46,40 @@
                                 <tr>
                                     <th>Id</th>
                                     <th>Name</th>
-                                    <th>Username</th>
-                                    <th>Phone</th>
-                                    <th>Email</th>
-                                    <th>Expired</th>
-                                    <th>Locked</th>
-                                    <th>Enabled</th>
                                     <th>Actions</th>
                                 </tr>
                                 </tfoot>
                                 <tbody>
 
-                                {{#users}}
+                                {{#roles}}
                                 <tr>
                                     <td>{{ id }}</td>
                                     <td>{{ name }}</td>
-                                    <td>{{ username }}</td>
-                                    <td>{{ phone }}</td>
-                                    <td>{{ email }}</td>
-                                    <td>
-                                        {{#expired}}Expired{{/expired}}
-                                        {{^expired}}Not Expired{{/expired}}
-                                    </td>
-                                    <td>
-                                        {{#locked}}Locked{{/locked}}
-                                        {{^locked}}Not Locked{{/locked}}
-                                    </td>
-                                    <td>
-                                        {{#enabled}}Enabled{{/enabled}}
-                                        {{^enabled}}Not Enabled{{/enabled}}
-                                    </td>
                                     <td class="d-flex justify-content-around">
-                                        <a href="/admin/users/{{ id }}/edit" class="btn btn-sm btn-primary">
+                                        <a href="/admin/roles/{{ id }}/edit" class="btn btn-sm btn-primary">
                                             <i class="fa fa-edit"> </i>
                                         </a>
                                         <a role="button" href="#" data-toggle="modal"
-                                           data-target="#delete-user-{{id}}" class="btn btn-sm btn-danger">
+                                           data-target="#delete-role-{{id}}" class="btn btn-sm btn-danger">
                                             <i class="fa fa-trash-alt"> </i>
                                         </a>
 
-                                        {{> /admin/includes/modals/delete-user-confirmation }}
+                                        {{> /admin/includes/modals/delete-role-confirmation }}
 
                                     </td>
                                 </tr>
-                                {{/users}}
+                                {{/roles}}
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
 
-                {{/USERS_REGISTERED}}
+                {{/ROLES_AVAILABLE}}
 
-                {{^USERS_REGISTERED}}
-                <div class="font-weight-bold">No User registered Yet</div>
-                {{/USERS_REGISTERED}}
+                {{^ROLES_AVAILABLE}}
+                <div class="font-weight-bold">No Centers Added Yet</div>
+                {{/ROLES_AVAILABLE}}
 
             </div>
 

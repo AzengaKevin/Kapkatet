@@ -70,6 +70,15 @@ public class UserService {
         userRepository.save(user);
     }
 
+    public void deleteUserBiId(long id) throws Exception {
+
+        if (!userRepository.existsById(id)) {
+            throw new Exception("No user found with such id. select available user please");
+        }
+
+        userRepository.deleteById(id);
+    }
+
     public long count() {
         return userRepository.count();
     }

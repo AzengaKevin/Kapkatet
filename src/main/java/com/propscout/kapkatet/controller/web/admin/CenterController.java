@@ -17,7 +17,7 @@ import java.util.List;
 
 @Controller
 @PreAuthorize("hasRole('Admin')")
-public class CentersController {
+public class CenterController {
 
     @Value("${app.name}")
     private String title;

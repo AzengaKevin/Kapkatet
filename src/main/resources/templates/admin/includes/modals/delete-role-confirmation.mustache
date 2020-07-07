@@ -1,0 +1,23 @@
+<!-- Logout Modal-->
+<div class="modal fade" id="delete-role-{{id}}" tabindex="-1" role="dialog"
+     aria-labelledby="role{{id}}ModalLabel">
+    <div class="modal-dialog" role="form">
+
+        <form action="/admin/roles/{{id}}" method="post">
+            <input type="hidden" name="_csrf" value="{{ _csrf }}"/>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="role{{id}}ModalLabel">Role Delete Confirmation</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span>×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Are you sure you want to delete {{ name }}?</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-primary">Sure</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
