@@ -1,15 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-{{>partials/header}}
-<body id="page-top">
-{{>partials/nav}}
 
-<div class="container">
+{{> /partials/frontend/header }}
 
-    <h1>Contact</h1>
+<body>
+<header>
+    {{> /partials/frontend/nav }}
+</header>
 
-</div>
+<main style="margin-top: 72px;">
+    <div class="container" style="min-height: calc(100vh - 65px);">
+        <h2 class="font-weight-bold">Contact Us</h2>
 
-{{>partials/footer}}
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.56660442817!2d35.19167661433238!3d-0.6436039354432341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182b0835ec7113b7%3A0x8305db0fe99a2a23!2sKapkatet%20Tea%20Factory!5e0!3m2!1sen!2ske!4v1594215811317!5m2!1sen!2ske"
+                    width="1092" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0"></iframe>
+        </div>
+
+        <div class="mt-3">
+            <h4 class="font-weight-bold">Unique Enquiry</h4>
+            <form action="#" method="post">
+
+                <div class="mb-3">
+                    <input class="form-control" id="name" placeholder="Name"/>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <input type="email" class="form-control" id="emailAddress" placeholder="Email Address"/>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <input class="form-control" id="phoneNumber" placeholder="Phone Number"/>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <input class="form-control" id="subject" placeholder="Subject"/>
+                </div>
+
+                <div class="mb-3">
+                    <textarea name="message" class="form-control" id="message" placeholder="Message" rows="5">
+                    </textarea>
+                </div>
+
+                <div class="cleafix mb-3">
+                    <button class="btn btn-warning btn-lg">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- FOOTER -->
+    {{> /partials/frontend/footer }}
+
+</main>
+<!-- Logout Modal-->
+{{> /partials/logout-modal }}
+
+<!-- Bootstrap core JavaScript-->
+<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="/js/app.min.js"></script>
+
 </body>
+
 </html>

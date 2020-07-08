@@ -1,15 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-{{>partials/header}}
-<body id="page-top">
-{{>partials/nav}}
 
-<div class="container">
+{{> /partials/frontend/header }}
 
-    <h1>About</h1>
+<body>
+<header>
+    {{> /partials/frontend/nav }}
+</header>
 
-</div>
+<main style="margin-top: 72px;">
+    <div class="container" style="min-height: calc(100vh - 65px);">
 
-{{>partials/footer}}
+        <article>
+
+            <h2 class="font-weight-bold">A Global Leader in Quantity And Quality Teas​</h2>
+            <hr/>
+
+            <div>
+                <p>KTDA is a private company owned by about 600,000 smallholder tea farmers spread across 16 tea growing
+                    counties in Kenya. The farmers are shareholders to 54 tea companies that own KTDA (H) and its 8
+                    subsidiary companies.</p>
+
+                <p>Some of the 54 tea factory companies have expanded by setting up satellite factories in their
+                    neighborhoods to accommodate the extra leaf. The satellite factories are 15, adding up to 69 the
+                    total number of tea factories owned by smallholder tea farmers.</p>
+
+                <p>The eight subsidiary companies owned by KTDA (H) add value to the tea value chain. These companies
+                    include Chai Trading Company Limited, KTDA (Management Services), Majani Insurance Brokers, Kenya
+                    Tea Packers Limited, Greenland Fedha Limited, KTDA Foundation, Tea Machinery and Engineering Company
+                    Ltd, KTDA Power Company Limited and KTDA (MS).</p>
+            </div>
+
+        </article>
+
+        <!-- Board -->
+
+        <div class="mt-2 mt-mb-5">
+
+            <h2 class="font-weight-bold">Board Of Directors</h2>
+            <hr/>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
+                         xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                         role="img" aria-label="Placeholder: 140x140">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="#777"/>
+                        <text x="50%" y="50%" fill="#777"
+                              dy=".3em">140x140
+                        </text>
+                    </svg>
+                    <h2>Heading</h2>
+                    <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh
+                        ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                        Praesent commodo cursus magna.</p>
+                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
+                         xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                         role="img" aria-label="Placeholder: 140x140">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="#777"/>
+                        <text x="50%" y="50%" fill="#777"
+                              dy=".3em">140x140
+                        </text>
+                    </svg>
+                    <h2>Heading</h2>
+                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                        Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo,
+                        tortor mauris condimentum nibh.</p>
+                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
+                         xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                         role="img" aria-label="Placeholder: 140x140">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="#777"/>
+                        <text x="50%" y="50%" fill="#777"
+                              dy=".3em">140x140
+                        </text>
+                    </svg>
+                    <h2>Heading</h2>
+                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id
+                        ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                        condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                </div><!-- /.col-lg-4 -->
+            </div><!-- /.row -->
+        </div>
+
+    </div>
+    <!-- FOOTER -->
+    {{> /partials/frontend/footer }}
+</main>
+<!-- Logout Modal-->
+{{> /partials/logout-modal }}
+
+<!-- Bootstrap core JavaScript-->
+<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="/js/app.min.js"></script>
+
 </body>
+
 </html>
