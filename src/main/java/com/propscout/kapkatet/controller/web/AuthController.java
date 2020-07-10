@@ -54,9 +54,10 @@ public class AuthController {
     @PostMapping(value = {"/register"})
     public String register(Model model, @ModelAttribute("user") User user) {
 
-        System.out.println("User " + user);
-
         try {
+            //Set default role
+            user.setRoles("User");
+
             User registeredUser = userService.register(user);
 
             if (registeredUser != null) {

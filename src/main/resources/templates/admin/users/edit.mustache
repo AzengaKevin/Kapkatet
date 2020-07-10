@@ -76,17 +76,19 @@
                             <div class="form-group">
                                 <div class="form-check">
                                     <input name="enabled" type="checkbox" class="form-check-input"
-                                           id="enabledCheckbox" {{#currentUser.locked}}checked{{/currentUser.locked}} />
+                                           id="enabledCheckbox"
+                                    {{#currentUser.enabled}}checked{{/currentUser.enabled}} />
                                     <label class="form-check-label" for="enabledCheckbox">Account Enabled</label>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="role">Change Role</label>
-                                <select class="form-control" name="role_id" id="role">
-                                    {{#roles}}
-                                    <option value="{{ id }}">{{ name }}</option>
-                                    {{/roles}}
+                                <label for="roles">Change Role</label>
+                                <select class="form-control" name="roles" id="roles">
+                                    <option value="Admin">Admin</option>
+                                    <option value="Clerk">Clerk</option>
+                                    <option value="Farmer">Farmer</option>
+                                    <option value="User">User</option>
                                 </select>
                             </div>
 

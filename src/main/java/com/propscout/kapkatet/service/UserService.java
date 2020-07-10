@@ -1,7 +1,6 @@
 package com.propscout.kapkatet.service;
 
 import com.propscout.kapkatet.model.User;
-import com.propscout.kapkatet.repository.RoleRepository;
 import com.propscout.kapkatet.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,29 +15,11 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    @Autowired
-    private RoleRepository roleRepository;
-
     public User register(User user) throws Exception {
 
         validateUserInputs(user);
 
         validateAgainstExistingUsers(user);
-
-        //Set default user for th registering user
-        user.addRole(roleRepository.findById(4L).orElse(null));
-
-        return userRepository.save(user);
-    }
-
-    public User register(User user, long roleId) throws Exception {
-
-        validateUserInputs(user);
-
-        validateAgainstExistingUsers(user);
-
-        //Set default user for th registering user
-        user.addRole(roleRepository.findById(roleId).orElse(null));
 
         return userRepository.save(user);
     }
@@ -70,7 +51,7 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public void deleteUserBiId(long id) throws Exception {
+    public void deleteUserById(long id) throws Exception {
 
         if (!userRepository.existsById(id)) {
             throw new Exception("No user found with such id. select available user please");
@@ -91,6 +72,7 @@ public class UserService {
         if (StringUtils.isEmpty(user.getUsername())) throw new Exception("Username is required");
         if (StringUtils.isEmpty(user.getEmail())) throw new Exception("Email is required");
         if (StringUtils.isEmpty(user.getPhone())) throw new Exception("Phone is required");
+        if (StringUtils.isEmpty(user.getRoles())) throw new Exception("User Role is required");
     }
 
     private void validateAgainstExistingUsers(User user) throws Exception {

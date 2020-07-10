@@ -1,8 +1,6 @@
 package com.propscout.kapkatet.model;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -16,8 +14,10 @@ public class User {
 
     @Column(nullable = false, unique = true)
     private String username;
+
     @Column(nullable = false, unique = true)
     private String email;
+
     @Column(nullable = false, unique = true)
     private String phone;
 
@@ -32,13 +32,7 @@ public class User {
     @Column(insertable = false, updatable = false)
     private String passwordConfirmation;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "user_role",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id")
-    )
-    private Set<Role> roles;
+    private String roles;
 
     public Long getId() {
         return id;
@@ -92,25 +86,6 @@ public class User {
         return passwordConfirmation;
     }
 
-    public void setPasswordConfirmation(String passwordConfirmation) {
-        this.passwordConfirmation = passwordConfirmation;
-    }
-
-    public Set<Role> getRoles() {
-        return roles;
-    }
-
-    public void addRole(Role role) {
-
-        if (roles == null) roles = new HashSet<>();
-        if (role != null) roles.add(role);
-
-    }
-
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
-    }
-
     public boolean isExpired() {
         return expired;
     }
@@ -135,6 +110,14 @@ public class User {
         this.enabled = enabled;
     }
 
+    public String getRoles() {
+        return roles;
+    }
+
+    public void setRoles(String roles) {
+        this.roles = roles;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -148,7 +131,7 @@ public class User {
                 ", locked=" + locked +
                 ", enabled=" + enabled +
                 ", passwordConfirmation='" + passwordConfirmation + '\'' +
-                ", roles=" + roles +
+                ", roles='" + roles + '\'' +
                 '}';
     }
 }

@@ -1,8 +1,6 @@
 package com.propscout.kapkatet.controller.web.admin;
 
-import com.propscout.kapkatet.model.Role;
 import com.propscout.kapkatet.model.User;
-import com.propscout.kapkatet.service.RoleService;
 import com.propscout.kapkatet.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,9 +16,6 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-
-    @Autowired
-    private RoleService roleService;
 
     @Value("${app.name}")
     private String title;
@@ -46,11 +41,11 @@ public class UserController {
     }
 
     @PostMapping(value = {"/admin/users"})
-    public String store(@ModelAttribute("user") User user, @RequestParam("role_id") int roleId) {
+    public String store(@ModelAttribute("user") User user) {
 
         try {
 
-            userService.register(user, roleId);
+            userService.register(user);
 
             return "redirect:/admin/users";
 
@@ -65,14 +60,9 @@ public class UserController {
     @GetMapping(value = {"/admin/users/create"})
     public String create(CsrfToken csrfToken, Model model) {
 
-        //Get all the roles in the database
-        List<Role> roles = roleService.getAllRoles();
-
         model.addAttribute("title", title);
 
         model.addAttribute("page", "Add User");
-
-        model.addAttribute("roles", roles);
 
         addCsrf(csrfToken, model);
 
@@ -85,27 +75,20 @@ public class UserController {
 
         User user = userService.findById(userId);
 
-        List<Role> roles = roleService.getAllRoles();
-
-
         model.addAttribute("title", title);
 
         model.addAttribute("page", "Users");
 
         model.addAttribute("currentUser", user);
 
-        model.addAttribute("roles", roles);
-
         return "admin/users/edit";
     }
 
     @PostMapping(value = {"/admin/users/{userId}/edit"})
-    public String update(@PathVariable long userId, @ModelAttribute("user") User user, @RequestParam("role_id") int roleId) {
+    public String update(@PathVariable long userId, @ModelAttribute("user") User user) {
 
         try {
             user.setId(userId);
-
-            user.addRole(roleService.findById(roleId));
 
             userService.update(user);
 
@@ -125,7 +108,7 @@ public class UserController {
 
         try {
 
-            userService.deleteUserBiId(userId);
+            userService.deleteUserById(userId);
 
         } catch (Exception e) {
 

@@ -79,11 +79,12 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="role">Choose Role</label>
-                                <select class="form-control" name="role_id" id="role">
-                                    {{#roles}}
-                                    <option value="{{ id }}">{{ name }}</option>
-                                    {{/roles}}
+                                <label for="roles">Choose Role</label>
+                                <select class="form-control" name="roles" id="roles">
+                                    <option value="Admin">Admin</option>
+                                    <option value="Clerk">Clerk</option>
+                                    <option value="Farmer">Farmer</option>
+                                    <option value="User">User</option>
                                 </select>
                             </div>
 
